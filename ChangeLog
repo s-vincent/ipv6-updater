@@ -1,0 +1,11 @@
+28 March 2008 : version 0.2.2
+	-- Cleanup code and comments
+	-- Update util_sys.[ch] and dbg.[ch] 
+
+25 October 2006 : version 0.2
+	-- Memory leaks fixes.
+	-- SIGHUP signal (read again the configuration file).
+	-- Internationalization (partially).
+
+10 October 2006 : version 0.1
+	-- First version

@@ -1,0 +1,39 @@
+#!/bin/sh
+# /etc/init.d/ipv6-updater
+#
+
+set -e
+
+DAEMON=/usr/local/bin/ipv6-updater 
+NAME=ipv6-updater
+CONFIG=/etc/ipv6-updater.conf
+
+test -x $DAEMON || exit 0
+
+case "$1" in
+  start)
+    echo -n "Starting $NAME"
+    [ -d /var/run/ipv6-updater ] || mkdir -p /var/run/ipv6-updater
+    start-stop-daemon --start --background -m --pidfile /var/run/ipv6-updater/ipv6-updater.pid --exec $DAEMON -- -f $CONFIG
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping $NAME"
+    start-stop-daemon --stop --pidfile /var/run/ipv6-updater/ipv6-updater.pid --oknodo --exec $DAEMON -- -f $CONFIG
+    rm -f /var/run/ipv6-updater/ipv6-updater.pid
+    echo "."
+      ;;
+  restart)
+    echo -n "Restarting $NAME"
+    start-stop-daemon --stop --pidfile /var/run/ipv6-updater/ipv6-updater.pid --oknodo --exec $DAEMON -- -f $CONFIG
+    rm -f /var/run/ipv6-updater/ipv6-updater.pid
+    start-stop-daemon --start --background -m --pidfile /var/run/ipv6-updater/ipv6-updater.pid --exec $DAEMON -- -f $CONFIG
+    echo "."
+    ;;
+  *)
+    echo "Usage: /etc/init.d/$NAME {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0

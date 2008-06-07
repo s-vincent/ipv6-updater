@@ -1,0 +1,6 @@
+25 November 2006 : - Memory leaks fixes.
+		   - SIGHUP signal (read again the configuration file).
+		   - Internationalization (partially).
+
+10 October 2006 : - First version of this software!
+

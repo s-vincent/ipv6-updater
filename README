@@ -1,0 +1,38 @@
+----------
+IPv6Updater 
+-----------
+
+IPv6Updater is a client for http://www.dns6.org.
+It updates your IPv6 address on a DNS server.
+
+IPv6 address retrieving 
+-----------------------
+You can give a IPv6 address or let the program find your Global IPv6 address.
+
+Authentification
+----------------
+You can authentificate with the couple login/password or with a key.
+
+Options
+-------
+You can pass arguments via the command line or use a file.
+For a list of options available : ipv6-updater -h.
+All options are also described in the config file.
+
+Build / install
+---------------
+./configure
+make
+
+As root, 
+make install 
+
+Copy extra/updater.conf to your /etc/ or home directory.
+Put your parameters (login/pass, key, host, ...) in this file.
+
+If you want to run in init.d, copy extra/ipv6_updater_initd to /etc/init.d/ipv6-updater
+and run the command to make symbolick links (update-rc.d on Debian). The updater.conf file must be in /etc/, or you will have to modify /etc/init.d/ipv6-updater first.
+
+
+Launch the program!
+
