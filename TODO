@@ -1,0 +1,5 @@
+- Verbose mode (commande line argument / config file)
+- Log events (log files or syslog)
+- Internationalization (complete message)
+- MS Windows compatiblity (standalone Makefile / devcpp project)
+
