@@ -124,6 +124,12 @@ extern "C"
 		{
 			if (!strcmp(ifa->ifa_name, dev))
 			{
+				/* teredo interface */
+				if(!ifa->ifa_addr)
+				{
+					continue;
+				}
+
 				if (ifa->ifa_addr->sa_family==AF_INET6)
 				{
 					addr6=(struct sockaddr_in6*)ifa->ifa_addr;
