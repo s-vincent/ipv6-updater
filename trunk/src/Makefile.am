@@ -1,4 +1,4 @@
-AM_CFLAGS = -std=c99 -Wall -W -pedantic -D_POSIX_C_SOURCE=200112L -Wstrict-prototypes -Wredundant-decls -Waggregate-return
+AM_CFLAGS = -std=c99 -Wall -W -pedantic -D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE=600 -D_SVID_SOURCE -Wstrict-prototypes -Wredundant-decls -Waggregate-return
 
 INCLUDES = -I.
 bin_PROGRAMS = ipv6-updater
