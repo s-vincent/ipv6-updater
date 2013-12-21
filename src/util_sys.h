@@ -239,18 +239,6 @@ extern "C"
 #endif
 #endif
 
-#ifdef __STRICT_ANSI__
-	/**
-	 * \brief strdup-style.\n
-	 * strdup non-C89 (ANSI) function.
-	 * \param str string to duplicate
-	 * \return pointer on duplicate string
-	 * \warning Do not forget to freed the pointer
-	 * \author Sebastien Vincent
-	 */
-	char* strdup(char* str);
-#endif
-
 #ifdef __cplusplus
 }
 #endif

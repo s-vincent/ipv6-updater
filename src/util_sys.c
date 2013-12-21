@@ -196,22 +196,6 @@ extern "C"
 		return p;
 	}
 
-#ifdef __STRICT_ANSI__
-	char* strdup(char* str)
-	{
-		char* ret=NULL;
-		size_t nb=strlen(str)+1;
-
-		ret=malloc(nb+1);
-		if (!ret)
-		{
-			return NULL;
-		}
-		memcpy(ret, str, nb);
-		return ret;
-	}
-#endif
-
 #ifdef _WIN32
 
 	ssize_t sock_readv(int fd, const struct iovec *iov, int iovcnt, struct sockaddr* addr)
